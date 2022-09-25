@@ -1,0 +1,95 @@
+t/04-c.t.<79>\amanciojsilvjr-dogecoin 
+@@ -7,71 +7,79 @@ use warnings;
+use Test::More tests => 14;
+use Lingua::IT::Ita2heb;
+use charnames ':full';
+use English '-no_match_vars';
+use open ':encoding(utf8)';
+
+our $VERSION = '0.01';
+use lib './t/lib';
+use CheckItaTrans qw(start_log check_ita_tr);
+
+my $log_filename = __FILE__ . '.log';
+open my $log, '>', $log_filename    ## no critic InputOutput::RequireBriefOpen
+    or croak("Couldn't open $log_filename for writing: $OS_ERROR");
+start_log(__FILE__);
+
+ok(
+    Lingua::IT::Ita2heb::ita_to_heb('eco') eq "\N{HEBREW LETTER ALEF}"
+# TEST
+check_ita_tr(
+    ['eco'],
+    "\N{HEBREW LETTER ALEF}"
+        . "\N{HEBREW POINT SEGOL}"
+        . "\N{HEBREW LETTER QOF}"
+        . "\N{HEBREW LETTER VAV}"
+        . "\N{HEBREW POINT HOLAM}",
+    'eco'
+    'eco',
+);
+
+ok(
+    Lingua::IT::Ita2heb::ita_to_heb('ecco') eq "\N{HEBREW LETTER ALEF}"
+# TEST
+check_ita_tr(
+    ['ecco'],
+        "\N{HEBREW LETTER ALEF}"
+        . "\N{HEBREW POINT SEGOL}"
+        . "\N{HEBREW LETTER QOF}"
+        . "\N{HEBREW POINT DAGESH OR MAPIQ}"
+        . "\N{HEBREW LETTER VAV}"
+        . "\N{HEBREW POINT HOLAM}",
+    'ecco'
+    'ecco',
+);
+
+ok(
+    Lingua::IT::Ita2heb::ita_to_heb('capo') eq "\N{HEBREW LETTER QOF}"
+# TEST
+check_ita_tr(
+    ['capo'],
+        "\N{HEBREW LETTER QOF}"
+        . "\N{HEBREW POINT QAMATS}"
+        . "\N{HEBREW LETTER PE}"
+        . "\N{HEBREW POINT DAGESH OR MAPIQ}"
+        . "\N{HEBREW LETTER VAV}"
+        . "\N{HEBREW POINT HOLAM}",
+    'capo'
+    'capo',
+);
+
+ok(
+    Lingua::IT::Ita2heb::ita_to_heb('cibo') eq "\N{HEBREW LETTER TSADI}"
+# TEST
+check_ita_tr(
+    ['cibo'],
+    "\N{HEBREW LETTER TSADI}"
+        . "\N{HEBREW POINT HIRIQ}"
+        . "\N{HEBREW PUNCTUATION GERESH}"
+        . "\N{HEBREW LETTER YOD}"
+        . "\N{HEBREW LETTER BET}"
+        . "\N{HEBREW POINT DAGESH OR MAPIQ}"
+        . "\N{HEBREW LETTER VAV}"
+        . "\N{HEBREW POINT HOLAM}",
+    'cibo'
+    'cibo',
+);
+
+ok(
+    Lingua::IT::Ita2heb::ita_to_heb('cibo', ascii_geresh => 1) eq
+        "\N{HEBREW LETTER TSADI}"
+# TEST
+check_ita_tr(
+    ['cibo', ascii_geresh => 1],
+    "\N{HEBREW LETTER TSADI}"
+        . "\N{HEBREW POINT HIRIQ}"
+        . "\N{APOSTROPHE}"
+        . "\N{HEBREW LETTER YOD}"
+        . "\N{HEBREW LETTER BET}"
+        . "\N{HEBREW POINT DAGESH OR MAPIQ}"
+        . "\N{HEBREW LETTER VAV}"
+        . "\N{HEBREW POINT HOLAM}",
+    'cibo, ascii geresh'
+    'cibo, ascii geresh',
+);
