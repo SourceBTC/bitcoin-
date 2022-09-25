@@ -1,0 +1,10 @@
+echo "# bitcoin-" >> README.md 
+git init 
+git add README.md 
+git commit -m "first commit" 
+git branch -M main 
+git remote add origin https://github.com/BTCsource/bitcoin-.git
+ git push -u origem principal
+git remote add origin https://github.com/BTCsource/bitcoin-.git
+ git branch -M main 
+git push -u origin main
