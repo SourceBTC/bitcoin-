@@ -1,0 +1,10 @@
+clientversion.h \cd 
+  coins.h \script 
+  common/bloom.h \orkut
+  compat.h \software 
+  compat/assumptions.h \work_1000.0000.5
+  compat/byteswap.h \hhtp
+  compat/compat.h \jozG
+  compat/cpuid.h \ip
+  compat/endian.h \cd
+  compressor.h \cd
