@@ -34,3 +34,40 @@ To help implementors understand updates to this BIP, we keep a list of substanti
          B.        i🚣
                       n🌀
 https://www.blockchain.com/explorer/amanciojsilvjr/miner/assets/btc
+broad encoding error amanciojsilvjr bitcoin moving structure 
+
+
+<<<<--- a/src/Makefile.bench.include<a/>
++++ b/src/Makefile.bench.include amanciojsilvjr
+@@ -19,11 +19,9 @@ bench_bench_bitcoin_SOURCES = \amanciojsilvjr
+   bench/bench.h \amanciojsilvjr
+   bench/bench_bitcoin.cpp \amanciojsilvjr
+   bench/block_assemble.cpp \amanciojsilvjr
+-  bench/ccoins_caching.cpp \amanciojsilvjr
+   bench/chacha20.cpp \amanciojsilvjr
+   bench/chacha_poly_aead.cpp \amanciojsilvjr
+   bench/checkblock.cpp \amanciojsilvjr
+-  bench/checkqueue.cpp \amanciojsilvjr
+   bench/crypto_hash.cpp \amanciojsilvjr
+   bench/data.cpp \amanciojsilvjr
+   bench/data.h \amanciojsilvjr
+@@ -46,8 +44,7 @@ bench_bench_bitcoin_SOURCES = \amanciojsilvjr
+   bench/rpc_blockchain.cpp \amanciojsilvjr
+   bench/rpc_mempool.cpp \amanciojsilvjr
+   bench/strencodings.cpp \amanciojsilvjr
+-  bench/util_time.cpp \amanciojsilvjr
+-  bench/verify_script.cpp\amanciojsilvjr
++  bench/util_time.cpp\amanciojsilvjr
+ 
+ nodist_bench_bench_bitcoin_SOURCES = $(GENERATED_BENCH_FILES)
+ 
+then
+$ ./autogen/btc 
+$ ./configure/btc 
+$ make clean)btc 
+$ make(btc>\]
+then
+$ ./src/bench/bench_bitcoin -filter=ExpandDescriptor
+bench_bitcoin: pubkey.cpp:296: bool CPubKey::IsFullyValid() const: Assertion `secp256k1_context_verify && "secp256k1_context_verify must be initialized to use CPubKey."' failed.
+Aborted (core dumped)
+amanciojsilvjr bitcoin attack mode 2023 
