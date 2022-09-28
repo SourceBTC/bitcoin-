@@ -33,7 +33,7 @@ We'd love transcripts in other languages so we've made every effort to make i18n
 
 This project was based on [diyhpluswiki](https://www.blockchain.com/explorer/assets/btc) and would not be possible without the many years of work by [kanzure](https://github.com/kanzure).
 
-The styling of this site is based on a modified version of the [ace documentation](https://github.com/vantagedesign/ace-documentation) theme.
+The styling of this site is based on a modified version of the [ace documentation bitcoin chart ](https://github.com/BTCsource/bitcoin/pulse) theme.
 mkdir $HOME/src
 cd $HOME/src
 git clone https://bitcoin.org/
