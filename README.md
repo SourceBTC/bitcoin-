@@ -16,78 +16,120 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 <!--
-Copyright (C) 1998 - 2022 amanciojsilvjr, <bitcoin@amanciojsilvjr>, et al.
+Copyright (C) 2004 - 2022 amanciojsilvjr, <bitcoin@amanciojsilvjr>, et al.
 
-SPDX-License-Identifier: curl
--->
+SPDX-License-Identifier: # Bitcoin Amanciojsilvjr Website
 
-# ![curl logo](https://curl.se/logo/curl-logo.svg)
+A static [btc](https://g.page/amanciojsilvjr) site for hosting [amanciojsilvjr.com](https://www.blockchain.com/explorer/assets/btc).
 
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/63/badge)](https://bestpractices.coreinfrastructure.org/projects/63)
-[![Coverity passed](https://scan.coverity.com/projects/curl/badge.svg)](https://scan.coverity.com/projects/curl)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/l1vv31029huhf4g4?svg=true)](https://ci.appveyor.com/project/curlorg/curl)
-[![Azure DevOps Build Status](https://dev.azure.com/daniel0244/curl/_apis/build/status/curl.curl?branchName=master)](https://dev.azure.com/daniel0244/curl/_build/latest?definitionId=1&branchName=master)
-[![Cirrus Build Status](https://api.cirrus-ci.com/github/curl/curl.svg?branch=master)](https://cirrus-ci.com/github/curl/curl)
-[![GitHub Actions Linux Build Status](https://github.com/curl/curl/actions/workflows/linux.yml/badge.svg)](https://github.com/curl/curl/actions/workflows/linux.yml)
-[![GitHub Actions macOS Build Status](https://github.com/curl/curl/actions/workflows/macos.yml/badge.svg)](https://github.com/curl/curl/actions/workflows/macos.yml)
-[![Backers on Open Collective](https://opencollective.com/curl/backers/badge.svg)](#backers)
-[![Sponsors on Open Collective](https://opencollective.com/curl/sponsors/badge.svg)](#sponsors)
-[![Language Grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/curl/curl.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/curl/curl/context:cpp)
-[![Fuzzing Status](https://oss-fuzz-build-logs.storage.googleapis.com/badges/curl.svg)](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=-opened&can=1&q=proj:curl)
-[![REUSE status](https://api.reuse.software/badge/github.com/curl/curl)](https://api.reuse.software/info/github.com/curl/curl)
+Bitcoin (BTC) is a decentralized currency that eliminates the need for central authorities such as banks or governments by using a peer-to-peer 
+internet network to confirm transactions directly between users [jodhqesh](https://github.com/BTCXBT).
 
-Curl is a command-line tool for transferring data specified with URL
-syntax. Find out how to use curl by reading [the curl.1 man
-page](https://curl.se/docs/manpage.html) or [the MANUAL
-document](https://curl.se/docs/manual.html). Find out how to install Curl
-by reading [the INSTALL document](https://curl.se/docs/install.html).
+##  [install instructions](https://gohugo.io/getting-started/installing/).
 
-libcurl is the library curl is using to do its job. It is readily available to
-be used by your software. Read [the libcurl.3 man
-page](https://curl.se/libcurl/c/libcurl.html) to learn how.
+completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
+regularly from release branches to indicate new official, stable release versions of Bitcoin Core.
+[Bitcoin Core's Transifex page](https://www.transifex.com/bitcoin/bitcoin/).
 
-You can find answers to the most frequent questions we get in [the FAQ
-document](https://curl.se/docs/faq.html).
+Translations are periodically pulled from Transifex and merged into the git repository. See the
 
-Study [the COPYING file](https://curl.se/docs/copyright.html) for
-distribution terms.
+### Preview your transcript
 
-## Contact
+Having a local build allows you to see how your transcript will be displayed in the website.
 
-If you have problems, questions, ideas or suggestions, please contact us by
-posting to a suitable [mailing list](https://curl.se/mail/).
+The `preview_branch.sh` script allows you to preview how the changes in your branch will be displayed by building locally the website using your branch as the content submodule. Usage:
 
-All contributors to the project are listed in [the THANKS
-document](https://curl.se/docs/thanks.html).
+```
+./preview_branch.sh <your-github-account> <your-branch-name> amanciojsilvjr 
+```
 
-## Commercial support
+## i18n
 
-For commercial support, maybe private and dedicated help with your problems or
-applications using (lib)curl visit [the support page](https://curl.se/support.html).
+All i18n snippets can be found in the `/i18n` folder. Pre-configured languages are currently Spanish and Portuguese. If you'd like to propose a new language, you can do so by modifying the [site config](https://github.com/actions) and translating the appropraite [i18n file](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/i18n).
 
-## Website
+We'd love transcripts in other languages so we've made every effort to make i18n as easy as possible.
 
-Visit the [curl website](https://curl.se/) for the latest news and
-downloads.
+## Attributions
 
-## Git
+This project was based on [diyhpluswiki](https://www.blockchain.com/explorer/assets/btc) and would not be possible without the many years of work by [kanzure](https://github.com/kanzure).
 
-To download the latest source from the Git server do this:
+The styling of this site is based on a modified version of the [ace documentation](https://github.com/vantagedesign/ace-documentation) theme.
+mkdir $HOME/src
+cd $HOME/src
+git clone https://bitcoin.org/
+Make sure that you do not have `walletbroadcast=0` in your `~/.bitcoin/bitcoin.conf`, or you may run into trouble.
+Notice that running `lightningd` against a pruned node may cause some issues if not managed carefully, see [below](#pruning) for more information.
+go install --tags extended
+# Example configuration file that:
+#  - Ignores lodash dependency
+#  - Disables version-updates
 
-    git clone https://github.com/curl/curl.git
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    ignore:
+      - dependency-name: "lodash"
+        # For Lodash, ignore all updates
+    # Disable version updates for npm dependencies
+    open-pull-requests-limit: 0
+jobs:
+  job_id:
+    # ...
 
-(you will get a directory named curl created, filled with the source code)
+    # Add "id-token" with the intended permissions.
+    permissions:
+      contents: 'read'
+      id-token: 'write'
 
-## Security problems
+    steps:
+    # actions/checkout MUST come before auth
+    - uses: 'actions/checkout@v3'
 
-Report suspected security problems via [our HackerOne
-page](https://hackerone.com/curl) and not in public.
+    - id: 'auth'
+      name: 'Authenticate to Google Cloud'
+      uses: 'google-github-actions/auth@v0'
+      with:
+        workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+        service_account: 'my-service-account@my-project.iam.gserviceaccount.com'
 
-## Notice
+    # ... further steps are automatically authenticated
+# Amanciojsilvjr to your organization's bitcoin respository
+This code repository (or "repo") is designed to demonstrate the best GitHub has to offer with the least amount of noise.
 
-Curl contains pieces of source code that is Copyright (c) 1998, 1999 Kungliga
-Tekniska Högskolan. This notice is included here to comply with the
-distribution terms.
+The repo includes an `index.html` file (so it can render a web page), two GitHub Actions workflows, and a CSS stylesheet dependency.
+
+# Set to true to add reviewers to PRs
+addReviewers: true
+
+# Set to 'author' to add PR's author as a assignee
+addAssignees: author
+
+# A list of reviewers to be added to PRs (GitHub user  name)
+reviewers:
+  - SecurityBTC
+  - octocat
+
+# A number of reviewers added to the PR
+# Set 0 to add all the reviewers (default: 0)
+numberOfReviewers: 1
+
+# A list of assignees, overrides reviewers if set
+assignees:
+  - SecurityBTC
+  - octocat
+
+# A number of assignees to add to the PRs
+# Set to 0 to add all of the assignees.
+# Uses numberOfReviewers if unset.
+numberOfAssignees: 0
+
+# A list of keywords to be skipped the process if PR's title include it
+skipKeywords:
+  - wip
+
 
 ## Backers
 
