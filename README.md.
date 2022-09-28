@@ -15,7 +15,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 <!--
-Copyright (C) 1998 - 2022 Daniel Stenberg, <daniel@haxx.se>, et al.
+Copyright (C) 1998 - 2022 amanciojsilvjr, <bitcoin@amanciojsilvjr>, et al.
 
 SPDX-License-Identifier: curl
 -->
@@ -109,4 +109,9 @@ link to your website. [[Become a sponsor](https://opencollective.com/curl#sponso
 [![Open Collective Sponsor 7](https://opencollective.com/curl/sponsor/7/avatar.svg)](https://opencollective.com/curl/sponsor/7/website)
 [![Open Collective Sponsor 8](https://opencollective.com/curl/sponsor/8/avatar.svg)](https://opencollective.com/curl/sponsor/8/website)
 [![Open Collective Sponsor 9](https://opencollective.com/curl/sponsor/9/avatar.svg)](https://opencollective.com/curl/sponsor/9/website)
+
+# Welcome to your organization's demo respository
+This code repository (or "repo") is designed to demonstrate the best GitHub has to offer with the least amount of noise.
+
+The repo includes an `index.html` file (so it can render a web page), two GitHub Actions workflows, and a CSS stylesheet dependency.
 
