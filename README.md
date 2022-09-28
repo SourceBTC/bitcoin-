@@ -1,4 +1,4 @@
-SPDX-License-Identifier: # Bitcoin Amanciojsilvjr Website
+# Bitcoin Amanciojsilvjr Website
 
 A static [btc](https://g.page/amanciojsilvjr) site for hosting [amanciojsilvjr.com](https://www.blockchain.com/explorer/assets/btc).
 
